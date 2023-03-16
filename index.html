@@ -78,8 +78,8 @@
                         <a href="#about" class="button">About me</a>
                     </div>
                 </div>
-                <div class="home__handle">
-                    <img src="static/assets/img/yolo.png" alt="" class="home__img">
+                <div class="home__handle" data-tilt-transform-style: preserve-3d  data-tilt-transform: perspective(1000px); >
+                    <img src="static/assets/img/yolo.png" alt="" class="home__img" data-tilt-transform: translateZ(100px) >
 
                 </div>
 
@@ -768,8 +768,24 @@
     <script src=""></script>
 
     <!--=============== MIXITUP FILTER ===============-->
+   
     <script src=static/js/mixitup.min.js"></script>
-    <script type="text/javascript" src="static/js/vanilla-tilt.babel.js"></script>
+    <script type="text/javascript" src="static/js/vanilla-tilt.babel.js">   
+    </script>
+
+    <script>
+          VanillaTilt.init(document.querySelector(".about__img"), {
+            max: 25,
+            speed: 600
+          });
+     
+          VanillaTilt.init(document.querySelector(".home__handle"), {
+            max: 25,
+            speed: 600,
+            scale:                  1.4,  
+            transition: true
+          });
+    </script>
     <!--=============== MAIN JS ===============-->
    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -777,7 +793,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   
+    <script src="static/js/main.js"></script>
 
 
-<script src="static/js/main.js"></script>
 </html>
