@@ -78,9 +78,9 @@
                         <a href="#about" class="button">About me</a>
                     </div>
                 </div>
-                <div class="home__handle" data-tilt-transform-style: preserve-3d  data-tilt-transform: perspective(1000px); >
-                    <img src="static/assets/img/yolo.png" alt="" class="home__img" data-tilt-transform: translateZ(100px) >
-
+                <div class="home__handle" data-tilt-transform-style: preserve-3d  data-tilt-transform: perspective(1000px); > 
+                   <img src="static/assets/img/yolo.png" alt="" class="home__img" data-tilt-transform: translateZ(100px) >
+                       
                 </div>
 
                 <div class="home__social">
@@ -113,8 +113,11 @@
             <span class="section__subtitle">My Intro</span>
             <h2 class="section__title">about me</h2>
             <div class="about__conatainer container grid">
-                <img src="static/assets/img/yeri4.jpg" alt="" class="about__img">
-
+              <!--  <img src="static/assets/img/yeri4.jpg" alt="" class="about__img">-->
+                <video width="400" controls class="home_vid">
+                    <source src="static/assets/img/yeri.mp4" type="video/mp4">
+                                  
+                  </video>
                 <div class="about__data">
 
                     <div class="about__info">
@@ -780,7 +783,7 @@
           });
      
           VanillaTilt.init(document.querySelector(".home__handle"), {
-            max: 25,
+            max: 40,
             speed: 600,
             scale:                  1.4,  
             transition: true

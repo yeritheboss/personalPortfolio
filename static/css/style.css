@@ -268,11 +268,13 @@ font-weight: var(--font-medium);
   width: 160px;
 }
 
+
+
 .home__handle{
 
   justify-self: center;
   width: 162pxpx;
-  height: 212px;
+  height: 224px;
   background: linear-gradient(180deg,
   hsla(var(--first-hue), var(--sat),var(--lig),1),
   hsla(var(--first-hue), var(--sat),var(--lig),.2)
@@ -376,7 +378,11 @@ color: var(--first-color);
   row-gap:  2.5rem;
 
 }
-
+.home_vid{
+  width: 220px;
+  border-radius:1.5rem ;
+  justify-self: center;
+}
 
 .about__img{
   width: 220px;
