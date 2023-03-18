@@ -918,6 +918,12 @@ text-align: center;
     grid-template-columns: 145px;
     justify-content: center;
   }
+  .work__item{
+    font-size: var(--small-font-size);
+  }
+  .work__filters{
+    column-gap:.25rem;
+  }
 }
 
 /* For medium devices */
