@@ -113,7 +113,7 @@
             <span class="section__subtitle">My Intro</span>
             <h2 class="section__title">about me</h2>
             <div class="about__conatainer container grid">
-              <!--  <img src="static/assets/img/yeri4.jpg" alt="" class="about__img">-->
+               <!-- <img src="static/assets/img/yolo.png" alt="" class="about__img">-->
                 <video width="400" controls class="home_vid">
                     <source src="static/assets/img/yeri.mp4" type="video/mp4">
                                   
@@ -613,23 +613,29 @@
             <div class="work__filters">
                 <span class="work__item active-work" data-filter="all"> All</span>
                 <span class="work__item" data-filter=".web"> Web</span>
-                <span class="work__item" data-filter=".movil"> Movil</span>
+                <span class="work__item" data-filter=".movil"> Aplicaciones webs</span>
                 <span class="work__item" data-filter=".design"> Design</span>
             </div>
 
             <div class="work__container container grid">
                 <div class="work__card mix web ">
-                    <img src="static/assets/img/chatGPT.jpeg" alt="" class="work__img" >
-                    <h3 class="work__title">ChatGPT</h3>
+                    <img src="static/assets/img/web2.png" alt="" class="work__img" >
+                    <h3 class="work__title">Web Desing</h3>
                     <a href="#" class="work__button">
                         Demo <i class='bx bx-right-arrow-alt work__icon'></i>
                     </a>
                 </div>
-
-                <div class="work__card mix movil">
-                    <img src="static/assets/img/chatGPT.jpeg" alt="" class="work__img">
-                    <h3 class="work__title">Web design</h3>
+                <div class="work__card mix web ">
+                    <img src="static/assets/img/web3.png" alt="" class="work__img">
+                    <h3 class="work__title">Web Design</h3>
                     <a href="#" class="work__button">
+                        Demo <i class='bx bx-right-arrow-alt work__icon'></i>
+                    </a>
+                </div>
+                <div class="work__card mix movil">
+                    <img src="static/assets/img/YERIGPT.PNG" alt="" class="work__img">
+                    <h3 class="work__title">YeriGPT</h3>
+                    <a href="https://yeri-gpt.vercel.app/" class="work__button">
                         Demo <i class='bx bx-right-arrow-alt work__icon'></i>
                     </a>
                 </div>
@@ -642,13 +648,7 @@
                     </a>
                 </div>
 
-                <div class="work__card mix web ">
-                    <img src="static/assets/img/chatGPT.jpeg" alt="" class="work__img">
-                    <h3 class="work__title">Web Design</h3>
-                    <a href="#" class="work__button">
-                        Demo <i class='bx bx-right-arrow-alt work__icon'></i>
-                    </a>
-                </div>
+                
 
                 <div class="work__card mix movil">
                     <img src="static/assets/img/chatGPT.jpeg" alt="" class="work__img">
@@ -773,14 +773,13 @@
     <!--=============== MIXITUP FILTER ===============-->
    
     <script src=static/js/mixitup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
+
     <script type="text/javascript" src="static/js/vanilla-tilt.babel.js">   
     </script>
 
     <script>
-          VanillaTilt.init(document.querySelector(".about__img"), {
-            max: 25,
-            speed: 600
-          });
+      
      
           VanillaTilt.init(document.querySelector(".home__handle"), {
             max: 40,
