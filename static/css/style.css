@@ -1003,7 +1003,14 @@ text-align: center;
       justify-content: center;
       column-gap: 3rem;
     }
-   
+    .home__handle{
+      width: 160px;
+      height: 180px;
+    }
+    .home__img{
+      width: 200px;
+      
+    }
   }
   
   
