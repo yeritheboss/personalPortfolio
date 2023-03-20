@@ -1033,11 +1033,12 @@ text-align: center;
     height: calc(var(--header-height)+ 1rem);
   }
   .home__handle{
-    width: 200px;
-    height: 300px;
+    width: 210px;
+    height: 250px;
   }
   .home__img{
-    width: 200px;
+    width: 210px;
+    height: 230px;
     
   }
   .home__social-link{
@@ -1060,6 +1061,7 @@ text-align: center;
   
   .about_video{
     width:350px;
+  
   }
   
   .about__data{
