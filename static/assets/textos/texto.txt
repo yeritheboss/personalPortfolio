@@ -13,3 +13,14 @@ ofrecer soluciones innovadores y eficientes en cualquier proyecto que aborde
 
 Esta es mi pagina web en ella podemos encontrar mis proyectos recientes, mis servicios, mi contacto, asi como mi curriculum.
 Espero que les guste mi pagina web.
+
+
+
+ingeniero electrónico de comunicaciones, con un enfoque en el desarrollo de Java
+ y su amplia variedad de herramientas y frameworks. 
+ Además, tengo experiencia en desarrollo web en el front-end 
+ y con frameworks de otros lenguajes.
+  Me apasiona el mundo del Big Data y las tecnologías, lo que me impulsó a formarme como Data Scientist y asesor financiero. También estoy interesado en la inversión y me gusta mantenerme actualizado en este campo.
+
+
+  Electronics and Communications Engineer specialized in computer science, specifically in Java development and familiar with all its tools and frameworks. I also have knowledge of front-end as a web developer and frameworks of other languages. I have a great passion for Big Data and the world of technologies and investments, which led me to train as a Data Scientist and Financial Advisor.
