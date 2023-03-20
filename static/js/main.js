@@ -1,16 +1,25 @@
     /*=============== Typed animation ===============*/
-    var typed = new Typed(".texto", {
-      strings: [
-          "Java Programmer",
-          "Electronics Engieneer",
-          "Full-Stack",
-          "Data Scientist",
-      ],
-      typeSpeed: 100,
-      backSpeed: 80,
-      loop: true,
-  });
+  
+  var typed = new Typed(".texto", {
+    strings: [
+        "Pogramador Java",
+        "Ingeniero Electrónico de telecomunicaciones",
+        "Full-Stack",
+        "Científico de Datos",
+    ],
+    typeSpeed: 100,
+    backSpeed: 80,
+    loop: true,
+});
 
+var typed2 = new Typed(".description", {
+  strings: [
+      "Ingeniero Electrónico de comunicaciones especializado en la informática concretamente en el desarrollo con Java y familiarizado con todas sus herramientas y   frameworks, también tengo conociemientos de front-end como desarrollador web y frameworks de  otros lenguajes. Tengo una gran pasión por el BigData y el mundo de las tecnologias y la  inversión, lo que me llevó a formarme como Data Scientist y como Asesor financiero.",
+  ],
+  typeSpeed: 50,
+  backSpeed: 80,
+  loop: false,
+});
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 const scrollHeader = () =>{
@@ -152,3 +161,5 @@ sr.reveal(`.home__data`)
 sr.reveal(`.home__handle`, {delay:700})
 sr.reveal(`.home__img`, {delay:700})
 sr.reveal(`.home__social, .home__scroll`,{delay:900, origin:'bottom'})
+
+
