@@ -898,6 +898,12 @@ text-align: center;
   text-align: center;
   font-size: var(--smaller-font-size);
 }
+
+.mensaje__confirmacion{
+  color: var(--first-color);
+  margin-top: 30px;
+  display: block;
+}
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{
   width: .6rem;
@@ -1142,7 +1148,7 @@ text-align: center;
     column-gap: 6rem;
   
   }
-  
+ 
   .footer__social-link{
     font-size: 1.25rem;
     padding: .4rem;

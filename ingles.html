@@ -79,7 +79,7 @@
                     <h3 class="home__education"><span class=texto2> </span></h3>
 
                     <div class="home__buttons">
-                        <a href="cv.html" class="button button--ghost">Dowonload cv</a>
+                        <a href="cvIngles.html" class="button button--ghost">Dowonload cv</a>
                         <a href="#about" class="button">About me</a>
                     </div>
                 </div>
@@ -714,25 +714,25 @@
                 <div class="contact__content">
                     <h3 class="contact__title">Write me your project</h3>
 
-                    <form action="" class="contact__form">
+                    <form action="" class="contact__form" name="submit-to-google-sheet">
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Names</label>
-                            <input type="text" class="contact__form-input" placeholder="Insert your Name">
+                            <input type="text" class="contact__form-input" placeholder="Insert your Name" name="Names">
                         </div>
                         <div class="contact__form-div">
                             <label for="" class="contact__form-tag">Mail</label>
-                            <input type="text" placeholder="Insert your mail" class="contact__form-input">
+                            <input type="text" placeholder="Insert your mail" class="contact__form-input" name="Mail">
                         </div>
 
                         <div class="contact__form-div contact__form-area">
                             <label for="" class="contact__form-tag">Project</label>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Write your project" class="contact__form-input"></textarea>
+                            <textarea  name="Project" id="" cols="30" rows="10" placeholder="Write your project" class="contact__form-input"></textarea>
                         </div>
 
                         <button class="button">Send Message</button>
                     </form>
 
-
+                    <span id="msg" class="mensaje__confirmacion" ></span>
                 </div>
             </div>
         </section>
@@ -798,7 +798,28 @@
           });
     </script>
     <!--=============== MAIN JS ===============-->
-   
+    <form name="submit-to-google-sheet">
+        <input name="email" type="email" placeholder="Email" required>
+        <button type="submit">Send</button>
+      </form>
+      
+      <script>
+     const scriptURL = 'https://script.google.com/macros/s/AKfycbzMTcySf9gJ-RP-UyTorGtccUancUJxJ1xN33dsKSRyMsWpUw9BOIWCu8y_n2pHkz4K/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg= document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{ msg.innerHTML = "Message recieve thank you"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js "></script>
@@ -807,4 +828,4 @@
     <script src="static/js/ingles.js "></script>
 
 
-</html>New New New New New New New New New New New chat
+</html>

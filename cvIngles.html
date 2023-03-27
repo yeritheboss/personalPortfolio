@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head >
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="static/css/cv.css" />
+        <script src="static/js/script.js"></script>
+        <title>Responsive resume cv</title>
+    </head>
+    <body >
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo">Gerangel</a>
+
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="" class="nav__link active-link">
+                                <i class='bx bx-home-alt nav__icon '></i>home
+
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#profile" class="nav__link">
+                                <i class='bx bx-user' ></i>Profile
+
+                            </a>
+                        </li> <li class="nav__item">
+                            <a href="#Education" class="nav__link">
+                                <i class='bx bx-book nav__icon' ></i>Education
+
+                            </a>
+                        </li> 
+                        
+                        <li class="nav__item">
+                            <a href="#Skills" class="nav__link">
+                                <i class='bx bx-receipt nav__icon' ></i>Skills
+
+                            </a>
+                        </li> 
+                        
+                        <li class="nav__item">
+                            <a href="#Experience" class="nav__link">
+                                <i class='bx bx-briefcase nav__icon' ></i>Experience
+
+                            </a>
+                        </li>
+                         
+                       
+                        
+             
+                    </ul>
+                </div>
+
+               <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt' ></i>
+               </div>
+            </nav>
+        </header>
+
+        <main class="l-main bd-container">
+            <!-- All elements within this div, is generated in PDF -->
+            <div class="resume" id="area-cv">
+               
+               
+                <div class="resume__left">
+                    <!--========== HOME ==========-->
+                    <section class="home" id="home">
+                        <div class="home__container section bd-grid">
+                          <div class="home__data bd-rid">
+                             <img src="static/assets/img/gerangel.jpeg" alt="" class="home__img">
+                             <h1 class="home__title">Gerangel <b>Berroteran Diaz</b></h1>
+                             <h3 class="home__profession">full-Stack Developer</h3>
+
+                           
+                               <!-- Button    to generate and download the pdf. Available for desktop. -->
+                               <div>
+                               <a download="" href="" class="home__button-movil">Download</a>
+                              </div>
+                          </div>
+
+                          <div class="home__address bd-grid">
+                            <span class="home__information">
+                                <i class='bx bx-map home__icon'> S.Sebastian de los Reyes, Madrid, Spain</i>  
+                            </span>
+                            <span class="home__information">
+                                <i class='bx bx-envelope home__icon' > gz.berroteran@gmail.com</i> 
+                            </span>
+                            <span class="home__information">
+                                <i class='bx bx-phone home__icon'> +34 633 90 35 58</i> 
+                            </span>
+                          </div>
+
+                          <!--theme change -->
+                          <i class='bx bxs-paint-roll change-theme' title="theme" id="theme-button"></i>
+                         <!--download-->
+                          <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button" ></i>
+                    </section>          
+
+
+                    
+                    <!--========== SOCIAL ==========-->
+                    <section class="social section">
+                        <h2 class="section-title">SOCIAL</h2>
+                        <div class="social__container bd-grid">
+                            <a href="" target="_blank" class="social__link">
+                                <i class='bx bxl-linkedin-square social__icon' >www.linkedin.com/in/Gerangel</i> 
+                            </a>
+                            <a href="" target="_blank"  class="social__link">
+                                <i class='bx bxl-github social__icon    ' >https://github.com/yeritheboss</i>
+                            </a>
+                            <a href="" target="_blank"  class="social__link">
+                                <i class='bx bxl-skype  social__icon    '>live:gz.berroteran_2</i>                            </a>
+                        </div>
+                    </section>
+
+                    <!--========== PROFILE ==========-->
+                    <section class="profile section" id="profile">
+                        <h2 class="section-title">Profile</h2>
+                        <p class="profile__description">Electronics Engineer specialized in computer communications focused on the back-end, providing services to applications with microservices-based architecture using Java 8.0 and higher. Also familiar with the front-end part, using Angular8 and other languages for web page layout.</p>
+                    </section>
+                    
+                    <!--========== EDUCATION ==========-->
+                    <section class="education section" id="Education">
+          
+                            <h2 class="section-title">Education</h2>
+                            <div class="education__container bd-grid">
+                                
+                                <div class="education__content">
+                                    <div class="education__time">
+                                        <span class="education__rounder"></span>
+                                        <span class="education_line"></span>
+                                    </div>
+                                    <div class="education_data bd-grid">
+                                        <h3 class="education__title">BI and BigData Analyst</h3>
+                                        <span class="educaiton__studies">Deusto University</span>
+                                        <span class="education__year">2018 - 2019</span>
+                                    </div>
+                                </div>
+                              
+                                <div class="education__content">
+                                    <div class="education__time">
+                                        <span class="education__rounder"></span>
+                                        <span class="education_line"></span>
+                                    </div>
+                                    <div class="education_data bd-grid">
+                                        <h3 class="education__title">Big Data Scientist</h3>
+                                        <span class="educaiton__studies">ICloud</span>
+                                        <span class="education__year">2018 - 2019</span>
+                                    </div>
+                                </div>
+                                <div class="education__content">
+                                    <div class="education__time">
+                                        <span class="education__rounder"></span>
+                                        <span class="education_line"></span>
+                                    </div>
+                                    <div class="education_data bd-grid">
+                                        <h3 class="education__title">Java Developer</h3>
+                                        <span class="educaiton__studies">Tokio School</span>
+                                        <span class="education__year">2017 - 2018</span>
+                                    </div>
+                                </div>
+                                <div class="education__content">
+                                    <div class="education__time">
+                                        <span class="education__rounder"></span>
+                                      <!--  <span class="education_line"></span>-->
+                                    </div>
+                                    <div class="education_data bd-grid">
+                                        <h3 class="education__title">Electronics and Communications Engineer</h3>
+                                        <span class="educaiton__studies">Polytechnic University of Madrid</span>
+                                        <span class="education__year">2009 - 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </section>
+
+
+                    <!--========== SKILLS  ==========-->
+                    
+
+                </div>
+
+                <div class="resume__right">
+                    <!--========== EXPERIENCE ==========-->
+                    <section class="experience section" id="experience">
+                        <h2 class="section-title">Experience</h2>
+
+
+                        <div class="experience__container bd-grid">
+                            <div class="experience__content">
+                                <div class="experience__time">
+                                 <span class="experience__rounder"></span> 
+                                 <span class="experience__line"></span>
+                                </div>
+
+
+                                <div class="experience__data bd-grid">
+                                    <h3 class="experience__title">Java Analyst full-Stack</h3>
+                                   <span class="experience__company">June 2022- Present | Second Windows</span>
+                                    <p class="experience__description">Responsible for developing both back-end and front-end banking applications. Developing applications focused on RESTful microservices architectures, using Spring Boot with Java 11 and 8. Also in charge of front-end layout using Angular 8. We use IDE tools like Eclipse for the back-end and Visual Studio for the front-end, and for the data part we use Dbeaver SQL CRUD. Finally, I also manage the security part with Spring Security and cryptography methodologies for secure client-server connections.           </div>
+
+
+                            </div>
+                            <div class="experience__content">
+                                <div class="experience__time">
+                                 <span class="experience__rounder"></span> 
+                                 <span class="experience__line"></span>
+                                </div>
+
+
+                                <div class="experience__data bd-grid">
+                                    <h3 class="experience__title">Java Analyst and Developer</h3>
+                                    <span class="experience__company">May 2021- June 2022 | Redsys </span>
+                                    <p class="experience__description">Responsible for analyzing and solving possible failures that may occur with telebanking applications, as well as improving and updating them to work more efficiently, as well as creating and managing transactions with RESTful microservices and APIs using Java 8.0 and Java 11, Spring, Spring Boot, and automation tools such as Jenkins and Eclipse as an IDE.</p>
+                                </div>
+
+
+                            </div>
+                            <div class="experience__content">
+                                <div class="experience__time">
+                                 <span class="experience__rounder"></span> 
+                                 <span class="experience__line"></span>
+                                </div>
+
+
+                                <div class="experience__data bd-grid">
+                                    <h3 class="experience__title">Java Developer</h3>
+                                    <span class="experience__company">July 2019-May 2021 | Voiping us</span>
+                                    <p class="experience__description">Application developer at AEAT, using a proprietary framework based on Java 8.0, responsible for migrating DB2-based applications to Oracle, utilizing automation tools like Jenkins and Eclipse as an IDE.</p>
+                                </div>
+
+
+                            </div>
+                            <div class="experience__content">
+                                <div class="experience__time">
+                                 <span class="experience__rounder"></span> 
+                                
+                                </div>
+
+
+                                <div class="experience__data bd-grid">
+                                    <h3 class="experience__title">Java Programmmer</h3>
+                                    <span class="experience__company">January-July 2019 | Amaris</span>
+                                    <p class="experience__description">Customize and tailor an application used for the administration and management of chemical and geological laboratories. The application used JBOSS WILDFLY servers, we used Selenium for testing, and finally utilized scripts and APIs in Python, Groovy, GitHub as a repository, and IntelliJ as an IDE with Java 11.</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </section>
+                    <section class="skills section" id="Skills">
+                        <h2 class="section-title">knowledge</h2>
+                        <div class="skills__content bd-grid">
+                            <ul class="skills__data">
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>Java,jsp, Spring Boot
+                                </li>
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>Python, Flask
+                                </li>
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>SQL,CRUD,Hibernate
+                                </li>
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>JavaScript
+                                </li>
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>Jenkins, Docker
+                                </li>
+                            </ul>
+
+                            <ul class="skills__data">
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>Angular, TypeScript
+                                </li>
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>Html/css
+                                </li>
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>Reactjs, nodeJs
+                                </li>
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span>JavaScript
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!--========== LANGUAGES ==========-->
+                    <section class="languages section">
+                        <h2 class="section-title">Lenguages</h2>
+
+                        <div class="languages__container">
+                                <ul class="languages__content bd-grid">
+                                    <li class="languages__name">
+                                        <span class="languages__circle"></span>Spanish
+                                    </li>
+                                    <li class="languages__name">
+                                        <span class="languages__circle"></span>English
+                                    </li>
+                                    <li class="languages__name">
+                                        <span class="languages__circle"></span>Arabic
+                                    </li>
+                                </ul>
+
+                        </div>
+                    </section>
+                    
+                    <!--========== INTERESTS ==========-->
+                    <section class="interests section">
+                        
+                    </section>
+                </div>
+            </div>        
+        </main>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+        </a>
+
+        <!--========== HTML2PDF ==========-->
+        <script src=static/js/html2pdf.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!--========== MAIN JS ==========-->
+        
+        <script src="static/js/cv.js"></script>
+
+    </body>
+</html>
