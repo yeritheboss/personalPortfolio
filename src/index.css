@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #050711;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background:
+      radial-gradient(circle at 14% 12%, rgba(141, 241, 255, .12), transparent 24rem),
+      radial-gradient(circle at 84% 8%, rgba(20, 184, 166, .14), transparent 30rem),
+      radial-gradient(circle at 42% 52%, rgba(255, 120, 184, .08), transparent 36rem),
+      linear-gradient(145deg, #050711 0%, #081524 44%, #061018 100%);
+    color: #c8d5e4;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  #root {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 14% 12%, rgba(141, 241, 255, .12), transparent 24rem),
+      radial-gradient(circle at 84% 8%, rgba(20, 184, 166, .14), transparent 30rem),
+      radial-gradient(circle at 42% 52%, rgba(255, 120, 184, .08), transparent 36rem),
+      linear-gradient(145deg, #050711 0%, #081524 44%, #061018 100%);
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+}
+
+.theme-dark {
+  --page-bg:
+    radial-gradient(circle at 14% 12%, rgba(141, 241, 255, .12), transparent 24rem),
+    radial-gradient(circle at 84% 8%, rgba(20, 184, 166, .14), transparent 30rem),
+    radial-gradient(circle at 42% 52%, rgba(255, 120, 184, .08), transparent 36rem),
+    linear-gradient(145deg, #050711 0%, #081524 44%, #061018 100%);
+  --nav: rgba(5, 7, 17, .72);
+  --panel: rgba(12, 24, 42, .54);
+  --panel-strong: rgba(7, 16, 30, .72);
+  --soft: rgba(141, 241, 255, .055);
+  --line: rgba(141, 241, 255, .16);
+  --title: #f8fbff;
+  --text: #c8d5e4;
+  --muted: #8fa0b4;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(141, 241, 255, .12), transparent 24rem),
+    radial-gradient(circle at 84% 8%, rgba(20, 184, 166, .14), transparent 30rem),
+    radial-gradient(circle at 42% 52%, rgba(255, 120, 184, .08), transparent 36rem),
+    linear-gradient(145deg, #050711 0%, #081524 44%, #061018 100%);
+  color: var(--text);
+}
+
+@layer components {
+  .section-shell {
+    @apply relative mx-auto max-w-[1500px] px-5 py-16 md:px-8 lg:px-10 lg:py-24;
+  }
+
+  .command-panel {
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .035)),
+      var(--panel);
+    box-shadow:
+      0 26px 90px rgba(0, 0, 0, .32),
+      inset 0 1px 0 rgba(255, 255, 255, .08);
+    @apply rounded-lg backdrop-blur-2xl;
+  }
+
+  .command-card {
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .028)),
+      var(--panel);
+    box-shadow:
+      0 20px 70px rgba(0, 0, 0, .22),
+      inset 0 1px 0 rgba(255, 255, 255, .07);
+    @apply rounded-lg p-5 backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:border-signal-cyan/40;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-signal-cyan px-5 py-3 text-sm font-semibold text-command-950 shadow-[0_18px_48px_rgba(141,241,255,.22)] transition hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--line);
+    background: var(--soft);
+    color: var(--title);
+    @apply inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-signal-cyan/50 hover:text-signal-cyan;
+  }
+
+  .tag {
+    border: 1px solid var(--line);
+    background: var(--soft);
+    color: var(--text);
+    @apply rounded-md px-2.5 py-1 text-xs font-medium;
+  }
+
+  .contact-link,
+  .utility-button {
+    border: 1px solid var(--line);
+    background: var(--soft);
+    color: var(--title);
+    @apply inline-flex items-center justify-center gap-3 rounded-lg transition hover:border-signal-cyan/45 hover:text-signal-cyan;
+  }
+
+  .contact-link {
+    @apply px-4 py-3;
+  }
+
+  .utility-button {
+    @apply h-9 min-w-9 px-3 text-xs font-semibold;
+  }
+
+  .video-ambient {
+    @apply relative overflow-hidden rounded-lg;
+  }
+
+  .video-ambient::before {
+    content: '';
+    position: absolute;
+    inset: -18px;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(141, 241, 255, .22), transparent 24rem),
+      radial-gradient(circle at 82% 74%, rgba(255, 120, 184, .16), transparent 20rem);
+    filter: blur(18px);
+  }
+
+  .video-ambient video {
+    border: 0;
+    box-shadow: 0 30px 120px rgba(0, 0, 0, .38);
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+}
+
+.star-grid {
+  background-image:
+    radial-gradient(circle, rgba(141, 241, 255, .55) 0 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(255, 255, 255, .28) 0 1px, transparent 1.2px),
+    linear-gradient(rgba(141, 241, 255, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(141, 241, 255, .055) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+  background-position: 0 0, 34px 40px, 0 0, 0 0, 0 0, 0 0;
+  background-size: 96px 96px, 144px 144px, 56px 56px, 56px 56px, 224px 224px, 224px 224px;
+  mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+  animation: driftGrid 58s linear infinite;
+}
+
+.star-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 0%, rgba(141, 241, 255, .08) 42%, transparent 56%),
+    radial-gradient(circle at 70% 18%, rgba(141, 241, 255, .16), transparent 18rem);
+  opacity: .7;
+  animation: scanGlow 18s ease-in-out infinite alternate;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.timeline-shell {
+  position: relative;
+}
+
+.timeline-shell::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: .75rem;
+  bottom: .75rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(141, 241, 255, .85), transparent);
+  opacity: .45;
+}
+
+.timeline-shell .command-panel {
+  position: relative;
+}
+
+.timeline-shell .command-panel::before {
+  content: '';
+  position: absolute;
+  left: -1.35rem;
+  top: 1.7rem;
+  width: .62rem;
+  height: .62rem;
+  border-radius: 999px;
+  background: #8df1ff;
+  box-shadow: 0 0 24px rgba(141, 241, 255, .75);
+  opacity: .85;
+}
+
+.project-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 0%, rgba(141, 241, 255, .16), transparent 18rem);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.055);
+  filter: saturate(1.08) contrast(1.04);
+}
+
+@keyframes driftGrid {
+  from {
+    background-position: 0 0, 34px 40px, 0 0, 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 96px 96px, 178px 184px, 56px 56px, 56px 56px, 224px 224px, 224px 224px;
+  }
+}
+
+@keyframes scanGlow {
+  from {
+    transform: translate3d(-2%, -1%, 0);
+    opacity: .45;
+  }
+  to {
+    transform: translate3d(2%, 1%, 0);
+    opacity: .8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-grid,
+  .star-grid::after {
+    animation: none;
+  }
+
+  .command-card,
+  .btn-primary,
+  .btn-secondary,
+  .project-card img {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    @apply py-12;
+  }
+
+  .timeline-shell::before,
+  .timeline-shell .command-panel::before {
+    display: none;
+  }
+}
