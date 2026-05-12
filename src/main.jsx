@@ -25,7 +25,7 @@ const fadeUp = {
 
 const copy = {
   es: {
-    nav: ['Experiencia', 'Proyectos', 'Stack', 'CV', 'Contacto'],
+    nav: ['Experiencia', 'Proyectos', 'Stack', 'Formacion', 'Contacto'],
     command: 'Engineering Command Center',
     projects: 'Ver proyectos',
     cv: 'Descargar CV',
@@ -47,7 +47,7 @@ const copy = {
     stackEyebrow: 'Tech stack',
     stackTitle: 'Stack con foco en entrega real',
     stackText: 'Tecnologias que uso para construir, mantener, integrar y desplegar aplicaciones empresariales.',
-    eduEyebrow: 'CV',
+    eduEyebrow: 'Background',
     eduTitle: 'Base tecnica, ingenieria y datos',
     contactEyebrow: 'Contact',
     contactTitle: 'Hablemos de tu proximo proyecto',
@@ -55,7 +55,7 @@ const copy = {
     viewProject: 'Ver proyecto',
   },
   en: {
-    nav: ['Experience', 'Projects', 'Stack', 'CV', 'Contact'],
+    nav: ['Experience', 'Projects', 'Stack', 'Background', 'Contact'],
     command: 'Engineering Command Center',
     projects: 'View projects',
     cv: 'Download CV',
@@ -77,7 +77,7 @@ const copy = {
     stackEyebrow: 'Tech stack',
     stackTitle: 'Stack focused on real delivery',
     stackText: 'Technologies I use to build, maintain, integrate and deploy enterprise applications.',
-    eduEyebrow: 'CV',
+    eduEyebrow: 'Background',
     eduTitle: 'Engineering, technical and data background',
     contactEyebrow: 'Contact',
     contactTitle: 'Let us talk about your next project',

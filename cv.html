@@ -15,17 +15,18 @@
       </a>
       <button class="toolbar-button" id="resume-button" type="button">
         <i class="bx bx-download"></i>
-        Descargar PDF
+        <span data-i18n="download">Descargar PDF</span>
       </button>
+      <button class="toolbar-link" id="language-button" type="button">EN</button>
     </header>
 
     <main class="cv-page" id="area-cv">
       <section class="cv-hero">
         <div>
-          <p class="cv-kicker">Full-stack Developer</p>
+          <p class="cv-kicker" data-i18n="role">Full-stack Developer</p>
           <h1>Gerangel Berroteran Diaz</h1>
           <p class="cv-headline">
-            Java 21 · Spring Boot · Angular · Microservicios · Cloud · DevOps
+            <span data-i18n="headline">Java 21 · Spring Boot · Angular · Microservicios · Cloud · DevOps</span>
           </p>
         </div>
         <div class="cv-contact">
@@ -38,8 +39,8 @@
       </section>
 
       <section class="cv-section cv-summary">
-        <h2>Perfil profesional</h2>
-        <p>
+        <h2 data-i18n="summaryTitle">Perfil profesional</h2>
+        <p data-i18n="summaryText">
           Ingeniero Electronico de comunicaciones y desarrollador full-stack con 7+ años de experiencia en aplicaciones empresariales,
           banca, logistica, microservicios y modernizacion de sistemas. Especializado en Java 21, Spring Boot, Angular/TypeScript,
           PostgreSQL, mensajeria con Kafka/Pub/Sub, DevOps y arquitecturas orientadas a rendimiento, seguridad y escalabilidad.
@@ -47,91 +48,91 @@
       </section>
 
       <section class="cv-section">
-        <h2>Core expertise</h2>
+        <h2 data-i18n="expertiseTitle">Core expertise</h2>
         <div class="expertise-grid">
           <article>
-            <h3>Backend & Microservices</h3>
-            <p>Java 21, Spring Boot, REST APIs, microservicios, caching, rendimiento, arquitectura distribuida.</p>
+            <h3 data-i18n="backendTitle">Backend & Microservices</h3>
+            <p data-i18n="backendText">Java 21, Spring Boot, REST APIs, microservicios, caching, rendimiento, arquitectura distribuida.</p>
           </article>
           <article>
-            <h3>Frontend Engineering</h3>
-            <p>Angular 8, TypeScript, React, JavaScript, HTML/CSS, interfaces web y aplicaciones internas.</p>
+            <h3 data-i18n="frontendTitle">Frontend Engineering</h3>
+            <p data-i18n="frontendText">Angular 8, TypeScript, React, JavaScript, HTML/CSS, interfaces web y aplicaciones internas.</p>
           </article>
           <article>
-            <h3>Cloud, DevOps & Delivery</h3>
-            <p>Google Cloud, Terraform, Jenkins, Maven, Docker, Bitbucket, pipelines y releases.</p>
+            <h3 data-i18n="cloudTitle">Cloud, DevOps & Delivery</h3>
+            <p data-i18n="cloudText">Google Cloud, Terraform, Jenkins, Maven, Docker, Bitbucket, pipelines y releases.</p>
           </article>
           <article>
-            <h3>Data & Messaging</h3>
-            <p>PostgreSQL, SQL, Kafka, Pub/Sub, Kafka bridges, integracion y centralizacion de datos.</p>
+            <h3 data-i18n="dataTitle">Data & Messaging</h3>
+            <p data-i18n="dataText">PostgreSQL, SQL, Kafka, Pub/Sub, Kafka bridges, integracion y centralizacion de datos.</p>
           </article>
         </div>
       </section>
 
       <section class="cv-section">
-        <h2>Experiencia profesional</h2>
+        <h2 data-i18n="experienceTitle">Experiencia profesional</h2>
         <div class="experience-list">
           <article class="experience-item">
             <div class="experience-meta">
               <h3>Otto Group</h3>
-              <span>Junio 2025 - Presente</span>
+              <span data-i18n="ottoPeriod">Junio 2025 - Presente</span>
             </div>
             <div class="experience-body">
               <h4>Application Developer</h4>
               <ul>
-                <li>Desarrollo de aplicaciones en entorno logistico, con foco en centralizacion de datos entre sistemas.</li>
-                <li>Participacion en la migracion progresiva de monolitos hacia microservicios con Java 21 y Spring Boot.</li>
-                <li>Trabajo con Google Cloud, Terraform y Bitbucket para soportar infraestructura, despliegues y flujo de desarrollo.</li>
-                <li>Implementacion de mensajeria entre servicios con Kafka, Pub/Sub y Kafka bridges.</li>
+                <li data-i18n="otto1">Desarrollo de aplicaciones en entorno logistico, con foco en centralizacion de datos entre sistemas.</li>
+                <li data-i18n="otto2">Participacion en la migracion progresiva de monolitos hacia microservicios con Java 21 y Spring Boot.</li>
+                <li data-i18n="otto3">Trabajo con Google Cloud, Terraform y Bitbucket para soportar infraestructura, despliegues y flujo de desarrollo.</li>
+                <li data-i18n="otto4">Implementacion de mensajeria entre servicios con Kafka, Pub/Sub y Kafka bridges.</li>
               </ul>
-              <p class="stack-line">Stack: Java 21, Spring Boot, Google Cloud, Terraform, Kafka, Pub/Sub, PostgreSQL, Bitbucket.</p>
+              <p class="stack-line" data-i18n="ottoStack">Stack: Java 21, Spring Boot, Google Cloud, Terraform, Kafka, Pub/Sub, PostgreSQL, Bitbucket.</p>
             </div>
           </article>
 
           <article class="experience-item">
             <div class="experience-meta">
               <h3>BNP Paribas</h3>
-              <span>2023 - Junio 2025</span>
+              <span data-i18n="bnpPeriod">2023 - Junio 2025</span>
             </div>
             <div class="experience-body">
               <h4>Team Lead / Full-stack Software Developer</h4>
               <ul>
-                <li>Liderazgo tecnico de equipo en entorno bancario, coordinando evolucion, mantenimiento y entrega de aplicaciones.</li>
-                <li>Desarrollo de nuevas features, bugfixes en produccion y soporte de servicios criticos.</li>
-                <li>Mejora de rendimiento mediante caching, optimizacion de servicios y analisis de comportamiento.</li>
-                <li>Implementacion de seguridad y endurecimiento de servicios dentro de un entorno regulado.</li>
+                <li data-i18n="bnp1">Liderazgo tecnico de equipo en entorno bancario, coordinando evolucion, mantenimiento y entrega de aplicaciones.</li>
+                <li data-i18n="bnp2">Desarrollo de nuevas features, bugfixes en produccion y soporte de servicios criticos.</li>
+                <li data-i18n="bnp3">Mejora de rendimiento mediante caching, optimizacion de servicios y analisis de comportamiento.</li>
+                <li data-i18n="bnp4">Implementacion de seguridad y endurecimiento de servicios dentro de un entorno regulado.</li>
               </ul>
-              <p class="stack-line">Stack: Java 21, Spring Boot, Angular 8, TypeScript, PostgreSQL, Jenkins, Maven, Caching, IntelliJ, VS Code.</p>
+              <p class="stack-line" data-i18n="bnpStack">Stack: Java 21, Spring Boot, Angular 8, TypeScript, PostgreSQL, Jenkins, Maven, Caching, IntelliJ, VS Code.</p>
             </div>
           </article>
 
           <article class="experience-item">
             <div class="experience-meta">
               <h3>Second Window</h3>
-              <span>Junio 2022 - Junio 2023</span>
+              <span data-i18n="secondPeriod">Junio 2022 - Junio 2023</span>
             </div>
             <div class="experience-body">
               <h4>Analista Java Full-stack</h4>
               <ul>
-                <li>Desarrollo de aplicaciones bancarias backend y frontend basadas en microservicios RESTful.</li>
-                <li>Trabajo con Spring Boot, Java 8/11, Angular 8, SQL, DBeaver, Eclipse y Visual Studio Code.</li>
-                <li>Gestion de seguridad con Spring Security, criptografia, JWT y OAuth 2.0.</li>
+                <li data-i18n="second1">Desarrollo de aplicaciones bancarias backend y frontend basadas en microservicios RESTful.</li>
+                <li data-i18n="second2">Trabajo con Spring Boot, Java 8/11, Angular 8, SQL, DBeaver, Eclipse y Visual Studio Code.</li>
+                <li data-i18n="second3">Gestion de seguridad con Spring Security, criptografia, JWT y OAuth 2.0.</li>
               </ul>
-              <p class="stack-line">Stack: Java, Spring Boot, Angular, SQL, Spring Security, JWT, OAuth 2.0.</p>
+              <p class="stack-line" data-i18n="secondStack">Stack: Java, Spring Boot, Angular, SQL, Spring Security, JWT, OAuth 2.0.</p>
             </div>
           </article>
 
           <article class="experience-item">
             <div class="experience-meta">
               <h3>Redsys</h3>
-              <span>Mayo 2021 - Junio 2022</span>
+              <span data-i18n="redsysPeriod">Mayo 2021 - Junio 2022</span>
             </div>
             <div class="experience-body">
               <h4>Analista y Desarrollador Java</h4>
               <ul>
-                <li>Analisis, resolucion de incidencias y mejora de aplicaciones de telebanco.</li>
-                <li>Creacion y gestion de transacciones mediante microservicios RESTful y APIs.</li>
-                <li>Uso de Java 8/11, Spring, Spring Boot, Jenkins y Eclipse.</li>
+                <li data-i18n="redsys1">Analisis, resolucion de incidencias y mejora de aplicaciones de telebanco.</li>
+                <li data-i18n="redsys2">Creacion y gestion de transacciones mediante microservicios RESTful y APIs.</li>
+                <li data-i18n="redsys3">Uso de Java 8/11, Spring, Spring Boot, Jenkins y Eclipse.</li>
               </ul>
             </div>
           </article>
@@ -139,22 +140,22 @@
           <article class="experience-item compact">
             <div class="experience-meta">
               <h3>Voiping US / AEAT</h3>
-              <span>Julio 2019 - Mayo 2021</span>
+              <span data-i18n="voipingPeriod">Julio 2019 - Mayo 2021</span>
             </div>
             <div class="experience-body">
               <h4>Desarrollador Java</h4>
-              <p>Desarrollo de aplicaciones Java 8 y migracion de sistemas basados en DB2 hacia Oracle, con Jenkins y Eclipse.</p>
+              <p data-i18n="voipingText">Desarrollo de aplicaciones Java 8 y migracion de sistemas basados en DB2 hacia Oracle, con Jenkins y Eclipse.</p>
             </div>
           </article>
 
           <article class="experience-item compact">
             <div class="experience-meta">
               <h3>Amaris</h3>
-              <span>Enero 2019 - Julio 2019</span>
+              <span data-i18n="amarisPeriod">Enero 2019 - Julio 2019</span>
             </div>
             <div class="experience-body">
               <h4>Programador Java</h4>
-              <p>Personalizacion de aplicacion para laboratorios con Java 11, JBoss WildFly, Selenium, Python, Groovy y GitHub.</p>
+              <p data-i18n="amarisText">Personalizacion de aplicacion para laboratorios con Java 11, JBoss WildFly, Selenium, Python, Groovy y GitHub.</p>
             </div>
           </article>
         </div>
@@ -162,7 +163,7 @@
 
       <section class="cv-section cv-two-columns">
         <div>
-          <h2>Stack tecnico</h2>
+          <h2 data-i18n="stackTitle">Stack tecnico</h2>
           <div class="skill-cloud">
             <span>Java 21</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span><span>React</span>
             <span>PostgreSQL</span><span>Kafka</span><span>Pub/Sub</span><span>Google Cloud</span><span>Terraform</span>
@@ -170,7 +171,7 @@
           </div>
         </div>
         <div>
-          <h2>Formacion</h2>
+          <h2 data-i18n="educationTitle">Formacion</h2>
           <ul class="plain-list">
             <li><strong>Ingeniero Electronico de Comunicaciones</strong><span>Universidad Politecnica de Madrid · 2009 - 2019</span></li>
             <li><strong>BI and BigData Analyst</strong><span>Universidad Deusto · 2018 - 2019</span></li>
@@ -178,25 +179,25 @@
             <li><strong>Java Developer</strong><span>Tokio School · 2017 - 2018</span></li>
           </ul>
 
-          <h2 class="section-spacer">Idiomas</h2>
-          <p class="language-line">Español · Ingles · Arabe</p>
+          <h2 class="section-spacer" data-i18n="languagesTitle">Idiomas</h2>
+          <p class="language-line" data-i18n="languagesText">Español · Ingles · Arabe</p>
         </div>
       </section>
 
       <section class="cv-section">
-        <h2>Proyectos destacados</h2>
+        <h2 data-i18n="projectsTitle">Proyectos destacados</h2>
         <div class="project-row">
           <article>
             <h3>YeriGPT</h3>
-            <p>Aplicacion web experimental centrada en IA e interfaz conversacional.</p>
+            <p data-i18n="projectYeri">Aplicacion web experimental centrada en IA e interfaz conversacional.</p>
           </article>
           <article>
             <h3>Yeri's Clothing</h3>
-            <p>Ecommerce con catalogo, presentacion de producto y experiencia frontend.</p>
+            <p data-i18n="projectClothing">Ecommerce con catalogo, presentacion de producto y experiencia frontend.</p>
           </article>
           <article>
             <h3>Hoobank</h3>
-            <p>Mockup fintech orientado a UI responsive y composicion de producto.</p>
+            <p data-i18n="projectHoobank">Mockup fintech orientado a UI responsive y composicion de producto.</p>
           </article>
         </div>
       </section>
