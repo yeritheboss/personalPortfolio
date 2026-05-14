@@ -1,5 +1,7 @@
 const areaCv = document.getElementById('area-cv')
 const resumeButton = document.getElementById('resume-button')
+const resumeEsButton = document.getElementById('resume-es-button')
+const resumeEnButton = document.getElementById('resume-en-button')
 const languageButton = document.getElementById('language-button')
 
 let currentLanguage = 'es'
@@ -79,6 +81,11 @@ function applyLanguage(language) {
   }
 }
 
+const requestedLanguage = new URLSearchParams(window.location.search).get('lang')
+if (requestedLanguage === 'en') {
+  applyLanguage('en')
+}
+
 const pdfOptions = {
   margin: [8, 8, 8, 8],
   filename: 'Gerangel_Berroteran_CV_ES.pdf',
@@ -98,17 +105,20 @@ const pdfOptions = {
   },
 }
 
-function generateResume() {
+function generateResume(language = currentLanguage) {
+  const previousLanguage = currentLanguage
+  applyLanguage(language)
   document.body.classList.add('is-exporting')
   html2pdf()
     .set({
       ...pdfOptions,
-      filename: currentLanguage === 'es' ? 'Gerangel_Berroteran_CV_ES.pdf' : 'Gerangel_Berroteran_CV_EN.pdf',
+      filename: language === 'es' ? 'Gerangel_Berroteran_CV_ES.pdf' : 'Gerangel_Berroteran_CV_EN.pdf',
     })
     .from(areaCv)
     .save()
     .finally(() => {
       document.body.classList.remove('is-exporting')
+      applyLanguage(previousLanguage)
     })
 }
 
@@ -119,5 +129,13 @@ if (languageButton) {
 }
 
 if (resumeButton && areaCv) {
-  resumeButton.addEventListener('click', generateResume)
+  resumeButton.addEventListener('click', () => generateResume(currentLanguage))
+}
+
+if (resumeEsButton && areaCv) {
+  resumeEsButton.addEventListener('click', () => generateResume('es'))
+}
+
+if (resumeEnButton && areaCv) {
+  resumeEnButton.addEventListener('click', () => generateResume('en'))
 }
