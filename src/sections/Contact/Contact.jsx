@@ -123,6 +123,14 @@ export function Contact({ lang, t }) {
           <span className="orbit-dot orbit-dot-4" />
           <span className="orbit-dot orbit-dot-5" />
           <span className="orbit-dot orbit-dot-6" />
+          <span className="orbit-spark orbit-spark-1" />
+          <span className="orbit-spark orbit-spark-2" />
+          <span className="orbit-spark orbit-spark-3" />
+          <span className="orbit-spark orbit-spark-4" />
+          <span className="orbit-spark orbit-spark-5" />
+          <span className="orbit-spark orbit-spark-6" />
+          <span className="orbit-spark orbit-spark-7" />
+          <span className="orbit-spark orbit-spark-8" />
         </motion.div>
       </div>
 
