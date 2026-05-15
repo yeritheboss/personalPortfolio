@@ -4,6 +4,7 @@ import { resolve } from 'node:path'
 
 export default defineConfig({
   plugins: [react()],
+  publicDir: 'static',
   build: {
     chunkSizeWarningLimit: 900,
     rollupOptions: {

@@ -41,7 +41,7 @@ export function Hero({ lang, t }) {
         <div className="mb-5 grid gap-4 md:grid-cols-[8rem_1fr]">
           <img
             className="h-36 w-full rounded-lg object-cover grayscale"
-            src="/static/assets/img/gerangel.jpeg"
+            src="/assets/img/gerangel.jpeg"
             alt={profile.name}
           />
           <div className="rounded-lg border border-white/10 bg-white/[.03] p-5">

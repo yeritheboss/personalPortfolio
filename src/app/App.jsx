@@ -121,6 +121,6 @@ function renderSlide(activeSlide, lang, t, onStartTour) {
   if (activeSlide === 'experience') return <Experience lang={lang} t={t} />
   if (activeSlide === 'projects') return <Projects lang={lang} t={t} />
   if (activeSlide === 'stack') return <Stack t={t} />
-  if (activeSlide === 'education') return <Education t={t} />
+  if (activeSlide === 'education') return <Education lang={lang} t={t} />
   return <Contact lang={lang} t={t} />
 }
