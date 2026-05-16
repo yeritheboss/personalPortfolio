@@ -113,7 +113,7 @@ function renderSlide(activeSlide, lang, t, onStartTour) {
     return (
       <>
         <Hero lang={lang} t={t} />
-        <Snapshot t={t} />
+        <Snapshot lang={lang} t={t} />
       </>
     )
   }
