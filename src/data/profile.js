@@ -77,7 +77,7 @@ export const experience = [
   {
     company: 'Otto Group',
     role: 'Application Developer',
-    period: { es: 'Junio 2025 - Presente', en: 'June 2025 - Present' },
+    period: { es: 'Julio 2025 - Presente', en: 'July 2025 - Present' },
     context: {
       es: 'Aplicaciones logisticas, centralizacion de datos y modernizacion de arquitectura.',
       en: 'Logistics applications, data centralization and architecture modernization.',
@@ -94,7 +94,7 @@ export const experience = [
   {
     company: 'BNP Paribas',
     role: 'Team Lead / Full-stack Software Developer',
-    period: { es: '2023 - Junio 2025', en: '2023 - June 2025' },
+    period: { es: 'Junio 2024 - Julio 2025', en: 'June 2024 - July 2025' },
     context: {
       es: 'Sector bancario, liderazgo tecnico y evolucion de servicios empresariales.',
       en: 'Banking sector, technical leadership and evolution of enterprise services.',
@@ -107,6 +107,24 @@ export const experience = [
       { es: 'Trabajo end-to-end con backend Java/Spring Boot, frontend Angular/TypeScript, SQL/PostgreSQL y pipelines Jenkins/Maven.', en: 'End-to-end work across Java/Spring Boot backend, Angular/TypeScript frontend, SQL/PostgreSQL and Jenkins/Maven pipelines.' },
     ],
     stack: ['Java 21', 'Spring Boot', 'Angular 8', 'TypeScript', 'PostgreSQL', 'Jenkins', 'Maven', 'Caching', 'IntelliJ', 'VS Code'],
+  },
+  {
+    company: 'Straumann Group',
+    role: 'Full-Stack Software Developer',
+    period: { es: 'Junio 2023 - Junio 2024', en: 'June 2023 - June 2024' },
+    context: {
+      es: 'Aplicacion especializada para implantologos, con desarrollo full-stack, releases y DevOps.',
+      en: 'Specialized application for implantologists, with full-stack development, releases and DevOps.',
+    },
+    impact: [
+      { es: 'Liderazgo del desarrollo backend y frontend de una aplicacion especializada para implantologos.', en: 'Led backend and frontend development for a specialized application for implantologists.' },
+      { es: 'Coordinacion de funciones relacionadas con releases e implementacion de tareas DevOps, incluyendo administracion de pipelines.', en: 'Coordinated release-related functions and implemented DevOps tasks, including pipeline administration.' },
+      { es: 'Diseno de nuevos componentes con React y TypeScript, asegurando una implementacion eficiente y robusta.', en: 'Designed new components with React and TypeScript, ensuring an efficient and robust implementation.' },
+      { es: 'Creacion y administracion de microservicios con Java Spring Boot, con foco en arquitectura escalable y modular.', en: 'Created and administered microservices with Java Spring Boot, focused on scalable and modular architecture.' },
+      { es: 'Aplicacion rigurosa de principios SOLID y arquitectura hexagonal en el desarrollo de software.', en: 'Rigorous application of SOLID principles and hexagonal architecture in software development.' },
+      { es: 'Comunicacion constante con stakeholders para entender necesidades y proponer nuevas caracteristicas y mejoras.', en: 'Constant communication with stakeholders to understand needs and propose new features and improvements.' },
+    ],
+    stack: ['Java', 'Spring Boot', 'React', 'TypeScript', 'SOLID', 'Arquitectura hexagonal', 'DevOps', 'Pipelines'],
   },
   {
     company: 'Second Window',
