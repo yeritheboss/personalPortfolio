@@ -1,0 +1,61 @@
+.assistant-title span {
+  color: #32e6ff;
+  text-shadow: 0 0 26px rgba(50, 230, 255, .42);
+}
+
+.assistant-primary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.assistant-primary-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  min-height: 3.4rem;
+  border: 1px solid rgba(103, 248, 255, .28);
+  border-radius: 999px;
+  padding: 0 1.35rem;
+  color: var(--title);
+  background: rgba(5, 7, 17, .34);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .05);
+  cursor: pointer;
+  font: inherit;
+  font-size: .95rem;
+  font-weight: 900;
+  backdrop-filter: blur(16px);
+  transition: border-color .22s ease, background .22s ease, box-shadow .22s ease, color .22s ease, transform .22s ease;
+}
+
+.assistant-primary-actions button:first-child {
+  color: #061018;
+  background: linear-gradient(135deg, #67f8ff, #22d3ee);
+  box-shadow: 0 18px 55px rgba(34, 211, 238, .32);
+}
+
+.assistant-primary-actions button:hover,
+.assistant-primary-actions button:focus-visible {
+  border-color: rgba(103, 248, 255, .7);
+  transform: translateY(-2px);
+}
+
+.assistant-primary-actions button:not(:first-child):hover,
+.assistant-primary-actions button:not(:first-child):focus-visible {
+  color: #67f8ff;
+  background: rgba(103, 248, 255, .08);
+  box-shadow: 0 18px 55px rgba(34, 211, 238, .12);
+}
+
+@media (max-width: 640px) {
+  .assistant-primary-actions {
+    gap: .65rem;
+  }
+
+  .assistant-primary-actions button {
+    min-height: 2.95rem;
+    padding: 0 1rem;
+    font-size: .84rem;
+  }
+}

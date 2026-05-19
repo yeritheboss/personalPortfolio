@@ -53,7 +53,7 @@ export const copy = {
     assistantTourSteps: {
       profile: 'Primero, el perfil profesional: desarrollador full-stack con foco en Java, React y sistemas escalables.',
       value: 'Ahora, las formas en las que aporta valor: backend, frontend, delivery y datos.',
-      experience: 'Seguimos con la experiencia, desde Otto Group y BNP Paribas hasta sus etapas anteriores.',
+      experience: 'Seguimos con la experiencia, desde Otto Group y BNP Paribas hasta sus etapas anteriores. En esta sección también puedes descargar el CV.',
       projects: 'Aquí puedes ver proyectos publicados y ejemplos de interfaz, producto y experimentos con IA.',
       stack: 'Este es su stack técnico principal, agrupado por backend, frontend, datos, DevOps y arquitectura.',
       education: 'En formación combina ingeniería, Big Data, BI y especialización Java.',
@@ -144,7 +144,7 @@ export const copy = {
     assistantTourSteps: {
       profile: 'First, the professional profile: a full-stack developer focused on Java, React and scalable systems.',
       value: 'Now, the ways he creates value: backend, frontend, delivery and data.',
-      experience: 'Next, his experience, from Otto Group and BNP Paribas to earlier roles.',
+      experience: 'Next, his experience, from Otto Group and BNP Paribas to earlier roles. You can also download the CV from this section.',
       projects: 'Here you can see published projects and examples of UI, product and AI experiments.',
       stack: 'This is his main technical stack, grouped by backend, frontend, data, DevOps and architecture.',
       education: 'His background combines engineering, Big Data, BI and Java specialization.',
