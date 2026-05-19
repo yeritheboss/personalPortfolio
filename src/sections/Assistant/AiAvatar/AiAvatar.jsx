@@ -19,18 +19,34 @@ export function AiAvatar({ t, onStartTour }) {
     let scene
     let camera
     let resizeObserver
+    let visibilityObserver
     let isMounted = true
+    let isSceneVisible = true
+    let isDocumentVisible = !document.hidden
 
     async function initScene() {
       const THREE = await import('three')
       if (!isMounted || !mountRef.current) return
 
+      const isCompactDevice = window.matchMedia('(max-width: 640px), (pointer: coarse)').matches
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      const detail = {
+        sphereSegments: isCompactDevice ? [28, 18] : [42, 28],
+        innerSegments: isCompactDevice ? [24, 16] : [36, 24],
+        outerDots: isCompactDevice ? 280 : 620,
+        innerDots: isCompactDevice ? 150 : 320,
+        beamLines: isCompactDevice ? 10 : 18,
+        ringSegments: isCompactDevice ? 72 : 120,
+        particles: isCompactDevice ? 55 : 150,
+        pixelRatio: isCompactDevice ? 1.15 : 1.6,
+      }
+
       scene = new THREE.Scene()
       camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100)
       camera.position.set(0, 0.15, 6)
 
-      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.6))
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isCompactDevice })
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, detail.pixelRatio))
       renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight)
       mountRef.current.appendChild(renderer.domElement)
 
@@ -146,16 +162,16 @@ export function AiAvatar({ t, onStartTour }) {
         return new THREE.Points(geometry, material)
       }
 
-      const outerAura = new THREE.Mesh(new THREE.SphereGeometry(1.29, 42, 28), outerAuraMaterial)
+      const outerAura = new THREE.Mesh(new THREE.SphereGeometry(1.29, ...detail.sphereSegments), outerAuraMaterial)
       outerAura.position.y = 0.62
-      const outerDots = createSphereDots(1.25, 620, pointMaterial, 0.62)
+      const outerDots = createSphereDots(1.25, detail.outerDots, pointMaterial, 0.62)
 
-      const innerHead = new THREE.Mesh(new THREE.SphereGeometry(0.78, 36, 24), coreMaterial)
+      const innerHead = new THREE.Mesh(new THREE.SphereGeometry(0.78, ...detail.innerSegments), coreMaterial)
       innerHead.position.y = 0.62
-      const innerAura = new THREE.Mesh(new THREE.SphereGeometry(0.85, 36, 24), innerAuraMaterial)
+      const innerAura = new THREE.Mesh(new THREE.SphereGeometry(0.85, ...detail.innerSegments), innerAuraMaterial)
       innerAura.position.y = 0.62
 
-      const innerDots = createSphereDots(0.83, 320, innerPointMaterial, 0.62)
+      const innerDots = createSphereDots(0.83, detail.innerDots, innerPointMaterial, 0.62)
 
       const eyeGeometry = new THREE.SphereGeometry(0.07, 18, 12)
       const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial)
@@ -184,8 +200,8 @@ export function AiAvatar({ t, onStartTour }) {
       outerBeam.material.opacity = 0.075
       const beamLineMaterial = new THREE.LineBasicMaterial({ color: 0x67f8ff, transparent: true, opacity: 0.26, blending: THREE.AdditiveBlending, depthWrite: false })
       const beamLines = new THREE.Group()
-      for (let i = 0; i < 18; i += 1) {
-        const theta = (i / 18) * Math.PI * 2
+      for (let i = 0; i < detail.beamLines; i += 1) {
+        const theta = (i / detail.beamLines) * Math.PI * 2
         const topRadius = i % 2 === 0 ? 0.58 : 0.36
         const points = [
           new THREE.Vector3(Math.cos(theta) * topRadius, -0.1, Math.sin(theta) * topRadius),
@@ -199,24 +215,24 @@ export function AiAvatar({ t, onStartTour }) {
       )
       beamCore.position.y = -1.24
       const floorRings = [0.46, 0.78, 1.16, 1.58, 2.05].map((radius, index) => {
-        const ring = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.006, 5, 120), floorMaterial.clone())
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.006, 5, detail.ringSegments), floorMaterial.clone())
         ring.rotation.x = Math.PI / 2
         ring.position.y = -1.22
         ring.material.opacity = 0.26 - index * 0.04
         return ring
       })
 
-      const halo = new THREE.Mesh(new THREE.TorusGeometry(1.62, 0.014, 6, 112), glassMaterial)
+      const halo = new THREE.Mesh(new THREE.TorusGeometry(1.62, 0.014, 6, detail.ringSegments), glassMaterial)
       halo.rotation.x = Math.PI / 2
       halo.position.y = 0.56
       const scanningHalo = new THREE.Mesh(
-        new THREE.TorusGeometry(1.33, 0.013, 6, 112),
+        new THREE.TorusGeometry(1.33, 0.013, 6, detail.ringSegments),
         new THREE.MeshBasicMaterial({ color: 0x39e1ff, transparent: true, opacity: 0.58 }),
       )
       scanningHalo.rotation.x = Math.PI / 2
       scanningHalo.position.y = 1.05
       const pinkHalo = new THREE.Mesh(
-        new THREE.TorusGeometry(1.72, 0.01, 6, 112),
+        new THREE.TorusGeometry(1.72, 0.01, 6, detail.ringSegments),
         new THREE.MeshBasicMaterial({ color: 0xff58d6, transparent: true, opacity: 0.42 }),
       )
       pinkHalo.rotation.x = Math.PI / 2.12
@@ -249,7 +265,7 @@ export function AiAvatar({ t, onStartTour }) {
       scene.add(light, magentaLight, new THREE.AmbientLight(0xd9f8ff, 0.48))
 
       const particles = new THREE.BufferGeometry()
-      const positions = new Float32Array(150 * 3)
+      const positions = new Float32Array(detail.particles * 3)
       for (let i = 0; i < positions.length; i += 3) {
         positions[i] = (Math.random() - 0.5) * 5
         positions[i + 1] = (Math.random() - 0.5) * 4
@@ -276,7 +292,28 @@ export function AiAvatar({ t, onStartTour }) {
       resizeObserver.observe(mountRef.current)
       resize()
 
+      const handleDocumentVisibility = () => {
+        isDocumentVisible = !document.hidden
+        if (isDocumentVisible && isSceneVisible && !frame) animate()
+      }
+
+      document.addEventListener('visibilitychange', handleDocumentVisibility)
+
+      visibilityObserver = new IntersectionObserver(
+        ([entry]) => {
+          isSceneVisible = entry.isIntersecting
+          if (isSceneVisible && isDocumentVisible && !frame) animate()
+        },
+        { threshold: 0.08 },
+      )
+      visibilityObserver.observe(mountRef.current)
+
       const animate = () => {
+        if (!isMounted || !isDocumentVisible || !isSceneVisible) {
+          frame = null
+          return
+        }
+
         const time = performance.now() * 0.001
         const speakBoost = speakingRef.current ? 0.065 : 0
         const floatY = -0.1 + Math.sin(time * 1.35) * (0.08 + speakBoost)
@@ -321,17 +358,25 @@ export function AiAvatar({ t, onStartTour }) {
         })
         particleSystem.rotation.y = time * 0.08
         renderer.render(scene, camera)
-        frame = requestAnimationFrame(animate)
+        frame = reducedMotion ? null : requestAnimationFrame(animate)
       }
       animate()
+
+      return () => document.removeEventListener('visibilitychange', handleDocumentVisibility)
     }
 
+    let removeDocumentVisibilityListener
     initScene()
+      .then((cleanup) => {
+        removeDocumentVisibilityListener = cleanup
+      })
 
     return () => {
       isMounted = false
       cancelAnimationFrame(frame)
+      removeDocumentVisibilityListener?.()
       resizeObserver?.disconnect()
+      visibilityObserver?.disconnect()
       renderer?.dispose()
       if (renderer?.domElement?.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement)
     }

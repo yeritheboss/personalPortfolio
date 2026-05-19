@@ -860,3 +860,37 @@
     transform: none;
   }
 }
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .profile-value-row,
+  .profile-status-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .profile-value-row article,
+  .profile-status {
+    border-right: 1px solid rgba(141, 241, 255, .13);
+    border-bottom: 0;
+  }
+
+  .profile-value-row article:last-child,
+  .profile-status:last-child {
+    border-right: 0;
+  }
+
+  .profile-signal {
+    grid-template-columns: 12rem minmax(0, 1fr);
+  }
+
+  .profile-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-timeline article {
+    grid-template-columns: 1rem 6.3rem minmax(0, 1fr) 2.15rem;
+  }
+
+  .profile-timeline time {
+    display: block;
+  }
+}

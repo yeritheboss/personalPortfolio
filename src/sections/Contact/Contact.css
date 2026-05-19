@@ -60,23 +60,49 @@
   line-height: 1.62;
 }
 
-.contact-stack-tags {
+.contact-intent-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;
-  margin-top: 1.25rem;
+  gap: .65rem;
+  margin-top: 1.45rem;
   max-width: 38rem;
 }
 
-.contact-stack-tags span {
-  border: 1px solid rgba(141, 241, 255, .32);
+.contact-intent-tag {
+  --contact-accent: #8df1ff;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 1px solid color-mix(in srgb, var(--contact-accent) 42%, transparent);
   border-radius: 999px;
-  padding: .44rem .68rem;
+  padding: .52rem .78rem;
   color: var(--title);
-  background: rgba(8, 20, 34, .5);
+  background:
+    radial-gradient(circle at 15% 18%, color-mix(in srgb, var(--contact-accent) 18%, transparent), transparent 4rem),
+    rgba(8, 20, 34, .5);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
   font-size: .8rem;
-  font-weight: 700;
+  font-weight: 850;
+}
+
+.contact-intent-tag i {
+  width: .48rem;
+  height: .48rem;
+  border-radius: 999px;
+  background: var(--contact-accent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--contact-accent) 78%, transparent);
+}
+
+.contact-intent-tag-2 {
+  --contact-accent: #a78bfa;
+}
+
+.contact-intent-tag-3 {
+  --contact-accent: #7ddf64;
+}
+
+.contact-intent-tag-4 {
+  --contact-accent: #ffb454;
 }
 
 .contact-orbit {
@@ -105,7 +131,7 @@
   background:
     radial-gradient(ellipse at 52% 50%, rgba(141, 241, 255, .24) 0 4%, rgba(141, 241, 255, .08) 9%, transparent 28%),
     radial-gradient(ellipse at 52% 50%, transparent 0 36%, rgba(141, 241, 255, .08) 41%, transparent 48%),
-    conic-gradient(from 20deg, transparent 0 12%, rgba(141, 241, 255, .1) 15%, transparent 29%, rgba(255, 120, 184, .045) 38%, transparent 54%, rgba(141, 241, 255, .08) 63%, transparent 80%);
+    conic-gradient(from 20deg, transparent 0 12%, rgba(141, 241, 255, .12) 15%, transparent 29%, rgba(167, 139, 250, .09) 38%, transparent 54%, rgba(255, 180, 84, .08) 63%, transparent 80%);
   filter: blur(7px);
   opacity: .64;
   transform: translate(-50%, -50%) rotate(-18deg);
@@ -164,11 +190,12 @@
 .orbit-dot {
   --move-x: .4rem;
   --move-y: -.35rem;
+  --orbit-accent: #8df1ff;
   width: .52rem;
   height: .52rem;
   border-radius: 999px;
-  background: #8df1ff;
-  box-shadow: 0 0 20px rgba(141, 241, 255, .88);
+  background: var(--orbit-accent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--orbit-accent) 82%, transparent);
   transform: translate(-50%, -50%);
   animation: contactDotDrift 5.4s ease-in-out infinite;
 }
@@ -184,6 +211,7 @@
   --move-x: -.45rem;
   --move-y: .35rem;
   animation-delay: -1.4s;
+  --orbit-accent: #a78bfa;
 }
 
 .orbit-dot-3 {
@@ -192,6 +220,7 @@
   --move-x: .25rem;
   --move-y: .5rem;
   animation-delay: -2.5s;
+  --orbit-accent: #7ddf64;
 }
 
 .orbit-dot-4 {
@@ -200,6 +229,7 @@
   --move-x: -.35rem;
   --move-y: -.45rem;
   animation-delay: -3.2s;
+  --orbit-accent: #ffb454;
 }
 
 .orbit-dot-5 {
@@ -210,6 +240,7 @@
   --move-x: .35rem;
   --move-y: .3rem;
   animation-delay: -4.2s;
+  --orbit-accent: #fb7185;
 }
 
 .orbit-dot-6 {
@@ -220,6 +251,7 @@
   --move-x: -.25rem;
   --move-y: -.25rem;
   animation-delay: -5.1s;
+  --orbit-accent: #67f8ff;
 }
 
 .orbit-spark {
@@ -303,7 +335,8 @@
   border: 1px solid rgba(141, 241, 255, .24);
   border-radius: .75rem;
   background:
-    radial-gradient(circle at 12% 12%, rgba(141, 241, 255, .08), transparent 18rem),
+    radial-gradient(circle at 12% 12%, rgba(141, 241, 255, .09), transparent 18rem),
+    radial-gradient(circle at 88% 8%, rgba(167, 139, 250, .08), transparent 14rem),
     linear-gradient(135deg, rgba(255, 255, 255, .058), rgba(255, 255, 255, .02)),
     rgba(5, 14, 25, .58);
   box-shadow:
@@ -328,6 +361,7 @@
 
 .contact-panel-title > span,
 .contact-preference > span {
+  --contact-icon-accent: #8df1ff;
   display: grid;
   width: 2.55rem;
   height: 2.55rem;
@@ -335,8 +369,30 @@
   place-items: center;
   border: 1px solid rgba(141, 241, 255, .18);
   border-radius: 999px;
-  color: #8df1ff;
-  background: radial-gradient(circle, rgba(141, 241, 255, .18), rgba(141, 241, 255, .05));
+  color: var(--contact-icon-accent);
+  background: radial-gradient(circle, color-mix(in srgb, var(--contact-icon-accent) 18%, transparent), color-mix(in srgb, var(--contact-icon-accent) 5%, transparent));
+}
+
+.contact-preference:nth-child(2) > span,
+.contact-link-list a:nth-child(2) svg {
+  --contact-icon-accent: #a78bfa;
+  color: #a78bfa;
+}
+
+.contact-preference:nth-child(3) > span,
+.contact-link-list a:nth-child(3) svg {
+  --contact-icon-accent: #7ddf64;
+  color: #7ddf64;
+}
+
+.contact-preference:nth-child(4) > span,
+.contact-link-list a:nth-child(4) svg {
+  --contact-icon-accent: #ffb454;
+  color: #ffb454;
+}
+
+.contact-preference:nth-child(5) > span {
+  --contact-icon-accent: #fb7185;
 }
 
 .contact-panel-title h3 {
@@ -655,6 +711,24 @@
   }
 }
 
+@media (min-width: 700px) and (max-width: 920px) {
+  .contact-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-process {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .contact-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-links-panel {
+    align-self: start;
+  }
+}
+
 @media (max-width: 420px) {
   .contact-preferences,
   .contact-links-panel,
@@ -670,7 +744,7 @@
     align-items: flex-start;
   }
 
-  .contact-stack-tags span {
+  .contact-intent-tag {
     padding: .48rem .65rem;
     font-size: .76rem;
   }

@@ -132,7 +132,7 @@ export function Education({ lang = 'es' }) {
           return (
             <motion.article
               key={`${item.period}-${localize(item.title, lang)}`}
-              className="education-card"
+              className={`education-card education-card-tone-${index + 1}`}
               custom={index}
               variants={fadeUp}
               initial="hidden"
@@ -172,7 +172,7 @@ export function Education({ lang = 'es' }) {
             {focusItems.map((item) => {
               const Icon = item.icon
               return (
-                <span key={localize(item.label, lang)} className="focus-chip">
+                <span key={localize(item.label, lang)} className={`focus-chip focus-chip-${focusItems.indexOf(item) + 1}`}>
                   <Icon size={20} strokeWidth={1.8} />
                   {localize(item.label, lang)}
                 </span>

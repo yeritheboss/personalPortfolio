@@ -1650,4 +1650,68 @@
   .value-quote {
     grid-template-columns: 1fr;
   }
+
+  .value-card-backend .value-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: auto;
+  }
+
+  .value-card-backend .value-card-body > div:first-child {
+    order: 2;
+  }
+
+  .value-card-backend .backend-map {
+    order: 1;
+    width: 100%;
+    min-height: 14.1rem;
+    margin-top: .25rem;
+  }
+
+  .value-card-backend h3 {
+    margin-top: .15rem;
+  }
+
+  .backend-client {
+    left: 0;
+    top: .2rem;
+    width: 3.85rem;
+    height: 3.85rem;
+  }
+
+  .backend-api {
+    right: 0;
+    left: auto;
+    top: .35rem;
+    width: 8.35rem;
+    height: 3rem;
+  }
+
+  .backend-services {
+    right: auto;
+    left: 50%;
+    top: 5rem;
+    width: min(13.2rem, 76%);
+    height: 4.65rem;
+    transform: translateX(-50%);
+  }
+
+  .backend-services div {
+    gap: .62rem;
+  }
+
+  .backend-events,
+  .backend-data {
+    bottom: .05rem;
+    width: 7.55rem;
+  }
+
+  .backend-events {
+    left: 0;
+  }
+
+  .backend-data {
+    right: 0;
+  }
 }

@@ -18,7 +18,8 @@
   z-index: -2;
   background:
     radial-gradient(circle at 77% 18%, rgba(8, 145, 178, .22), transparent 28rem),
-    radial-gradient(circle at 26% 72%, rgba(141, 241, 255, .07), transparent 28rem);
+    radial-gradient(circle at 26% 72%, rgba(141, 241, 255, .07), transparent 28rem),
+    radial-gradient(circle at 62% 88%, rgba(167, 139, 250, .08), transparent 24rem);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -42,32 +43,35 @@
 }
 
 .education-circuit::before {
-  right: max(16vw, 14rem);
+  right: clamp(1.5rem, 4vw, 4.5rem);
   top: 2.4rem;
-  width: min(49rem, 54vw);
+  width: clamp(34rem, 48vw, 49rem);
   height: 24rem;
   opacity: .42;
   background:
-    radial-gradient(circle, rgba(141, 241, 255, .46) 0 .09rem, transparent .11rem);
+    radial-gradient(circle, rgba(141, 241, 255, .42) 0 .08rem, transparent .11rem),
+    radial-gradient(circle, rgba(167, 139, 250, .24) 0 .07rem, transparent .1rem);
   background-size: 1.45rem 1.45rem;
   mask-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, .36), rgba(0, 0, 0, .86));
 }
 
 .education-circuit::after {
-  right: max(16vw, 14rem);
+  right: clamp(1.5rem, 4vw, 4.5rem);
   top: 2.2rem;
-  width: min(50rem, 55vw);
+  width: clamp(35rem, 49vw, 50rem);
   height: 25rem;
-  background: radial-gradient(circle at 68% 50%, rgba(8, 145, 178, .22), transparent 19rem);
+  background:
+    radial-gradient(circle at 68% 50%, rgba(8, 145, 178, .2), transparent 19rem),
+    radial-gradient(circle at 48% 68%, rgba(255, 180, 84, .08), transparent 13rem);
   filter: blur(4px);
   opacity: .82;
 }
 
 .circuit-network {
   position: absolute;
-  right: max(17vw, 15rem);
+  right: clamp(1rem, 3.8vw, 4rem);
   top: 3rem;
-  width: min(48rem, 52vw);
+  width: clamp(33rem, 47vw, 48rem);
   height: 24rem;
   overflow: visible;
   opacity: .78;
@@ -81,18 +85,38 @@
 }
 
 .circuit-paths path {
-  stroke: rgba(141, 241, 255, .22);
+  stroke: color-mix(in srgb, var(--circuit-path, #8df1ff) 28%, transparent);
   stroke-width: 1.25;
-  filter: drop-shadow(0 0 4px rgba(141, 241, 255, .16));
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--circuit-path, #8df1ff) 18%, transparent));
+}
+
+.circuit-paths path:nth-child(2),
+.circuit-pulses path:nth-child(2) {
+  --circuit-path: #a78bfa;
+}
+
+.circuit-paths path:nth-child(3),
+.circuit-pulses path:nth-child(3) {
+  --circuit-path: #7ddf64;
+}
+
+.circuit-paths path:nth-child(4),
+.circuit-pulses path:nth-child(4) {
+  --circuit-path: #ffb454;
+}
+
+.circuit-paths path:nth-child(5),
+.circuit-pulses path:nth-child(5) {
+  --circuit-path: #fb7185;
 }
 
 .circuit-pulses path {
   animation: educationCircuitTrace 4.8s linear infinite;
-  stroke: rgba(141, 241, 255, .95);
+  stroke: color-mix(in srgb, var(--circuit-path, #8df1ff) 88%, transparent);
   stroke-dasharray: 42 620;
   stroke-dashoffset: 0;
   stroke-width: 2;
-  filter: drop-shadow(0 0 9px rgba(141, 241, 255, .9));
+  filter: drop-shadow(0 0 9px color-mix(in srgb, var(--circuit-path, #8df1ff) 75%, transparent));
   opacity: .72;
 }
 
@@ -109,19 +133,30 @@
 }
 
 .circuit-node {
+  --circuit-accent: #8df1ff;
   animation: educationNodeGlow 4.4s ease-in-out infinite;
-  fill: rgba(4, 17, 31, .88);
-  stroke: rgba(141, 241, 255, .66);
+  fill: color-mix(in srgb, var(--circuit-accent) 9%, rgba(4, 17, 31, .88));
+  stroke: color-mix(in srgb, var(--circuit-accent) 68%, transparent);
   stroke-width: 2.4;
-  filter: drop-shadow(0 0 8px rgba(141, 241, 255, .48));
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--circuit-accent) 48%, transparent));
 }
 
 .circuit-node:nth-child(3n) {
   animation-delay: -1.1s;
+  --circuit-accent: #7ddf64;
 }
 
 .circuit-node:nth-child(3n + 1) {
   animation-delay: -2.3s;
+  --circuit-accent: #a78bfa;
+}
+
+.circuit-node:nth-child(4n) {
+  --circuit-accent: #ffb454;
+}
+
+.circuit-node:nth-child(5n) {
+  --circuit-accent: #fb7185;
 }
 
 .circuit-line {
@@ -349,16 +384,33 @@
 }
 
 .education-card {
+  --edu-accent: #8df1ff;
+  --edu-glow: rgba(141, 241, 255, .34);
   position: relative;
   display: grid;
   justify-items: center;
+}
+
+.education-card-tone-2 {
+  --edu-accent: #a78bfa;
+  --edu-glow: rgba(167, 139, 250, .3);
+}
+
+.education-card-tone-3 {
+  --edu-accent: #7ddf64;
+  --edu-glow: rgba(125, 223, 100, .26);
+}
+
+.education-card-tone-4 {
+  --edu-accent: #ffb454;
+  --edu-glow: rgba(255, 180, 84, .24);
 }
 
 .education-period {
   position: absolute;
   top: -3.25rem;
   margin: 0;
-  color: #8df1ff;
+  color: var(--edu-accent);
   font-size: .98rem;
   font-weight: 900;
 }
@@ -368,10 +420,10 @@
   top: -1.02rem;
   width: 1.45rem;
   height: 1.45rem;
-  border: 3px solid rgba(141, 241, 255, .86);
+  border: 3px solid color-mix(in srgb, var(--edu-accent) 84%, transparent);
   border-radius: 999px;
   background: rgba(9, 27, 42, .95);
-  box-shadow: 0 0 0 .28rem rgba(141, 241, 255, .12), 0 0 28px rgba(141, 241, 255, .72);
+  box-shadow: 0 0 0 .28rem color-mix(in srgb, var(--edu-accent) 12%, transparent), 0 0 28px var(--edu-glow);
 }
 
 .timeline-node::after {
@@ -381,8 +433,8 @@
   top: 100%;
   width: 1px;
   height: 3rem;
-  background: linear-gradient(180deg, rgba(141, 241, 255, .95), rgba(141, 241, 255, .18));
-  box-shadow: 0 0 16px rgba(141, 241, 255, .36);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--edu-accent) 90%, transparent), color-mix(in srgb, var(--edu-accent) 18%, transparent));
+  box-shadow: 0 0 16px var(--edu-glow);
 }
 
 .education-card-inner {
@@ -393,7 +445,7 @@
   border-radius: .95rem;
   padding: 1.45rem 1.2rem;
   background:
-    radial-gradient(circle at 50% 0%, rgba(141, 241, 255, .14), transparent 8rem),
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--edu-accent) 15%, transparent), transparent 8rem),
     linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)),
     rgba(4, 15, 27, .6);
   box-shadow: 0 22px 70px rgba(0, 0, 0, .26), inset 0 1px 0 rgba(255, 255, 255, .08);
@@ -404,8 +456,8 @@
 
 .education-card-inner:hover {
   transform: translateY(-5px);
-  border-color: rgba(141, 241, 255, .72);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .32), 0 0 36px rgba(141, 241, 255, .12);
+  border-color: color-mix(in srgb, var(--edu-accent) 64%, transparent);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .32), 0 0 36px color-mix(in srgb, var(--edu-accent) 18%, transparent);
 }
 
 .education-icon {
@@ -415,8 +467,8 @@
   height: 4.9rem;
   place-items: center;
   margin: -.65rem auto 1.25rem;
-  color: #8df1ff;
-  filter: drop-shadow(0 0 16px rgba(141, 241, 255, .3));
+  color: var(--edu-accent);
+  filter: drop-shadow(0 0 16px var(--edu-glow));
 }
 
 .education-icon::before,
@@ -428,21 +480,21 @@
 }
 
 .education-icon::before {
-  background: linear-gradient(145deg, rgba(141, 241, 255, .92), rgba(141, 241, 255, .2));
+  background: linear-gradient(145deg, color-mix(in srgb, var(--edu-accent) 88%, transparent), color-mix(in srgb, var(--edu-accent) 22%, transparent));
   opacity: .95;
 }
 
 .education-icon::after {
   inset: 2px;
   background:
-    radial-gradient(circle at 50% 28%, rgba(141, 241, 255, .18), transparent 56%),
+    radial-gradient(circle at 50% 28%, color-mix(in srgb, var(--edu-accent) 22%, transparent), transparent 56%),
     rgba(5, 22, 35, .92);
 }
 
 .education-icon svg {
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 0 9px rgba(141, 241, 255, .55));
+  filter: drop-shadow(0 0 9px var(--edu-glow));
 }
 
 .education-card h3 {
@@ -498,6 +550,8 @@
   padding: 1.6rem 2rem;
   background:
     radial-gradient(circle at 14% 50%, rgba(141, 241, 255, .1), transparent 14rem),
+    radial-gradient(circle at 74% 22%, rgba(167, 139, 250, .08), transparent 14rem),
+    radial-gradient(circle at 88% 88%, rgba(255, 180, 84, .06), transparent 12rem),
     linear-gradient(145deg, rgba(255, 255, 255, .052), rgba(255, 255, 255, .018)),
     rgba(4, 14, 25, .58);
   box-shadow: 0 24px 75px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .07);
@@ -552,6 +606,7 @@
 }
 
 .focus-chip {
+  --focus-accent: #8df1ff;
   display: inline-flex;
   align-items: center;
   gap: .65rem;
@@ -562,7 +617,24 @@
 }
 
 .focus-chip svg {
-  color: #8df1ff;
+  color: var(--focus-accent);
+  filter: drop-shadow(0 0 9px color-mix(in srgb, var(--focus-accent) 52%, transparent));
+}
+
+.focus-chip-2 {
+  --focus-accent: #a78bfa;
+}
+
+.focus-chip-3 {
+  --focus-accent: #7ddf64;
+}
+
+.focus-chip-4 {
+  --focus-accent: #ffb454;
+}
+
+.focus-chip-5 {
+  --focus-accent: #fb7185;
 }
 
 .education-focus blockquote {
@@ -636,15 +708,15 @@
 @keyframes educationNodeGlow {
   0%,
   100% {
-    fill: rgba(4, 17, 31, .82);
-    stroke: rgba(141, 241, 255, .5);
-    filter: drop-shadow(0 0 5px rgba(141, 241, 255, .35));
+    fill: color-mix(in srgb, var(--circuit-accent) 8%, rgba(4, 17, 31, .82));
+    stroke: color-mix(in srgb, var(--circuit-accent) 52%, transparent);
+    filter: drop-shadow(0 0 5px color-mix(in srgb, var(--circuit-accent) 36%, transparent));
   }
 
   45% {
-    fill: rgba(141, 241, 255, .22);
-    stroke: rgba(141, 241, 255, .98);
-    filter: drop-shadow(0 0 15px rgba(141, 241, 255, .9));
+    fill: color-mix(in srgb, var(--circuit-accent) 24%, rgba(4, 17, 31, .64));
+    stroke: color-mix(in srgb, var(--circuit-accent) 96%, white 4%);
+    filter: drop-shadow(0 0 15px color-mix(in srgb, var(--circuit-accent) 82%, transparent));
   }
 }
 

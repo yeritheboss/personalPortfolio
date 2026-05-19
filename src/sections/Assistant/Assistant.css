@@ -59,3 +59,16 @@
     font-size: .84rem;
   }
 }
+
+@media (max-width: 640px) and (max-height: 740px) {
+  .assistant-primary-actions {
+    gap: .45rem;
+    margin-top: .95rem;
+  }
+
+  .assistant-primary-actions button {
+    min-height: 2.45rem;
+    padding: 0 .8rem;
+    font-size: .76rem;
+  }
+}

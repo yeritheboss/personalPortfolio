@@ -28,6 +28,7 @@ export function Contact({ lang, t }) {
         message: 'Message',
         remotePlaceholder: 'Select an option',
         success: ['Your message will be saved', "You'll receive an auto-reply", "I'll review and respond personally"],
+        signals: ['Senior roles', 'Remote / hybrid', 'Product teams', 'Real impact'],
         prefs: [
           ['Senior / Tech Lead Roles', 'Backend, Full-stack or Technical Leadership positions.'],
           ['Compensation', 'Aligned with senior roles, from €50k+.'],
@@ -57,6 +58,7 @@ export function Contact({ lang, t }) {
         message: 'Mensaje',
         remotePlaceholder: 'Selecciona una opcion',
         success: ['Tu mensaje quedara preparado', 'Recibiras una respuesta', 'Lo revisare personalmente'],
+        signals: ['Roles senior', 'Remoto / hibrido', 'Equipos de producto', 'Impacto real'],
         prefs: [
           ['Roles Senior / Tech Lead', 'Posiciones backend, full-stack o liderazgo tecnico.'],
           ['Compensacion', 'Alineada con roles senior, desde €50k+.'],
@@ -67,7 +69,6 @@ export function Contact({ lang, t }) {
       }
 
   const preferenceIcons = [BriefcaseBusiness, DollarSignIcon, Home, UsersRound, Rocket]
-  const stackTags = ['Java', 'Spring Boot', 'Kafka', 'AWS', 'React', 'PostgreSQL', 'Docker', 'Kubernetes', 'Git']
   const links = [
     { label: profile.email, href: `mailto:${profile.email}`, icon: Mail },
     { label: 'LinkedIn', href: profile.linkedin, icon: Linkedin },
@@ -85,7 +86,6 @@ export function Contact({ lang, t }) {
       `${text.role}: ${data.get('role') || ''}`,
       `${text.salary}: ${data.get('salary') || ''}`,
       `${text.remote}: ${data.get('remote') || ''}`,
-      `${text.stack}: ${data.get('stack') || ''}`,
       '',
       `${text.message}:`,
       data.get('message') || '',
@@ -104,9 +104,12 @@ export function Contact({ lang, t }) {
           </p>
           <h2>{text.title}</h2>
           <p>{text.intro}</p>
-          <div className="contact-stack-tags">
-            {stackTags.map((tag) => (
-              <span key={tag}>{tag}</span>
+          <div className="contact-intent-tags">
+            {text.signals.map((signal, index) => (
+              <span key={signal} className={`contact-intent-tag contact-intent-tag-${index + 1}`}>
+                <i />
+                {signal}
+              </span>
             ))}
           </div>
         </motion.div>
@@ -192,7 +195,6 @@ export function Contact({ lang, t }) {
                 <option>On-site</option>
               </select>
             </label>
-            <ContactField label={text.stack} name="stack" placeholder="e.g. Java, Spring Boot, AWS" />
             <label className="contact-wide">
               <span>{text.message}</span>
               <textarea name="message" rows="5" placeholder={isEnglish ? 'Tell me more about the project, the role, the team...' : 'Cuéntame más sobre el proyecto, el rol, el equipo...'} />

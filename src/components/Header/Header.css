@@ -1,0 +1,105 @@
+.mobile-header-actions,
+.mobile-language,
+.mobile-menu,
+.mobile-menu-backdrop {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .nav-slide-list,
+  .desktop-language {
+    display: none !important;
+  }
+
+  .mobile-header-actions {
+    display: flex !important;
+    align-items: center;
+    gap: .55rem;
+    margin-left: auto;
+  }
+
+  .mobile-language {
+    display: inline-flex !important;
+    min-width: 2.95rem;
+    margin-left: -.3rem;
+  }
+
+  .mobile-menu-button {
+    position: relative;
+    z-index: 72;
+    width: 2.95rem;
+    padding-inline: 0;
+  }
+
+  .mobile-menu-backdrop {
+    position: fixed;
+    inset: 4rem 0 0;
+    z-index: 68;
+    display: block !important;
+    border: 0;
+    background: rgba(1, 7, 15, .54);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+  }
+
+  .mobile-menu-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 4rem;
+    right: .85rem;
+    z-index: 73;
+    display: grid !important;
+    width: min(17rem, calc(100vw - 1.7rem));
+    gap: .35rem;
+    border: 1px solid rgba(141, 241, 255, .2);
+    border-radius: .85rem;
+    padding: .7rem;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .025)),
+      rgba(5, 12, 24, .94);
+    box-shadow: 0 22px 70px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255, 255, 255, .07);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-.45rem) scale(.98);
+    transform-origin: top right;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .mobile-menu-link {
+    border: 1px solid transparent;
+    border-radius: .65rem;
+    padding: .8rem .9rem;
+    color: var(--text);
+    background: transparent;
+    font-size: .9rem;
+    font-weight: 800;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+  }
+
+  .mobile-menu-link:hover,
+  .mobile-menu-link.is-active {
+    border-color: rgba(141, 241, 255, .22);
+    color: #67f8ff;
+    background: rgba(141, 241, 255, .08);
+  }
+}
+
+@media (max-width: 767px) {
+  .brand-button .brand-name {
+    display: none !important;
+  }
+}
